@@ -134,7 +134,7 @@ impl<T: TransactionOrdering> PendingPool<T> {
     ///
     /// # Panics
     ///
-    /// if the transaction is already included
+    /// In debug builds, panics if the transaction is already included
     pub(crate) fn best_with_unlocked_and_attributes(
         &self,
         unlocked: Vec<Arc<ValidPoolTransaction<T::Transaction>>>,
@@ -282,7 +282,7 @@ impl<T: TransactionOrdering> PendingPool<T> {
     ///
     /// # Panics
     ///
-    /// if the transaction is already included
+    /// In debug builds, panics if the transaction is already included
     pub fn add_transaction(
         &mut self,
         tx: Arc<ValidPoolTransaction<T::Transaction>>,

@@ -33,7 +33,8 @@ pub trait SparseTrieInterface: Sized + Debug + Send + Sync {
     ///
     /// # Panics
     ///
-    /// May panic if the trie is not new/cleared, and has already revealed nodes.
+    /// Panics if the trie does not have a root node entry (which should never happen for a
+    /// properly initialized trie).
     fn with_root(
         self,
         root: TrieNode,

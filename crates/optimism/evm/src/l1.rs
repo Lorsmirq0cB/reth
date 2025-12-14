@@ -53,7 +53,8 @@ pub fn extract_l1_info_from_tx<T: Transaction>(
 /// transaction) in the L2 block.
 ///
 /// # Panics
-/// If the input is shorter than 4 bytes.
+///
+/// Panics if the input is shorter than 4 bytes.
 pub fn parse_l1_info(input: &[u8]) -> Result<L1BlockInfo, OpBlockExecutionError> {
     // Parse the L1 info transaction into an L1BlockInfo struct, depending on the function selector.
     // There are currently 4 variants:

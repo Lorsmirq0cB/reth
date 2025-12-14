@@ -132,7 +132,7 @@ where
     /// If the local head has not been set.
     #[inline]
     fn existing_local_block_number(&self) -> BlockNumber {
-        self.local_head.as_ref().expect("is initialized").number()
+        self.local_head.as_ref().expect("local_head must be set").number()
     }
 
     /// Returns the existing sync target.
@@ -142,7 +142,7 @@ where
     /// If the sync target has never been set.
     #[inline]
     fn existing_sync_target(&self) -> SyncTargetBlock {
-        self.sync_target.as_ref().expect("is initialized").clone()
+        self.sync_target.as_ref().expect("sync_target must be set").clone()
     }
 
     /// Max requests to handle at the same time

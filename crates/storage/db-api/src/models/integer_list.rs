@@ -52,7 +52,7 @@ impl IntegerList {
     #[inline]
     #[track_caller]
     pub fn new_pre_sorted(list: impl IntoIterator<Item = u64>) -> Self {
-        Self::new(list).expect("IntegerList must be pre-sorted and non-empty")
+        Self::new(list).expect("IntegerList must be pre-sorted")
     }
 
     /// Appends a list of integers to the current list.

@@ -52,7 +52,7 @@ pub struct TraceArgs {
     ///
     /// Example: --tracing-otlp.filter=info,reth=debug,hyper_util=off
     ///
-    /// Defaults to TRACE if not specified.
+    /// Defaults to debug if not specified.
     #[arg(
         long = "tracing-otlp.filter",
         global = true,
